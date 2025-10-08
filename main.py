@@ -91,7 +91,61 @@ def crear_interfaz(self):
             pady=5
     )
     btn_graficas.pack(side="left", padx=5)
+
+#Functions
+
+def calcular_imc(self, peso_kg, altura_cm):
+    try:
+        altura_metros = altura_cm / 100
+        imc = peso_kg / (altura_metros ** 2)
+        return round(imc, 2)
+    except:
+        return 0.0
+
+def guardar_datos(self):
     
+    fecha = self.entrada_fecha.get().strip()
+    peso = self.entrada_peso.get().strip()
+    altura = self.entrada_altura.get().strip()
+    cintura = self.entrada_cintura.get().strip()
+    notas = self.entrada_notas.get().strip()
+    
+    if not fecha or not peso or not altura:
+        messagebox.showwarning(
+            "Campos incompletos",
+            "Por favor, completa Fecha, Peso y Altura"
+        )
+        return
+    
+    try:
+        peso_float = float(peso)
+        altura_float = float(altura)
+        cintura_float = float(cintura) if cintura else 0.0
+    
+    except ValueError:
+        messagebox.showerror(
+            "Error de Formato",
+            "Peso, Altura y Cintura deben ser números"
+        )
+        return
+    
+    imc = self.calcular_imc(peso_float, altura_float)
+    
+    with open(self.archivo_csv, 'a', newline='', encoding='utf-8') as archivo:
+        escritor = csv.writer(archivo)
+        escritor = writerow([
+            fecha,
+            peso_float,
+            altura_float,
+            cintura_float if cintura else '',
+            imc,
+            notas
+        ])
+    
+    messagebox.showinfo(
+        "Éxito",
+        f"Registro guardado correctamente\nIMC calculado: {imc}"
+        )
     
     
     
