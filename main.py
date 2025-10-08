@@ -148,10 +148,29 @@ def guardar_datos(self):
         )
     
     
+    self.entrada_peso.delete(0, tk.END)
+    self.entrada_cintura.delete(0, tk.END)
+    self.entrada_notas.delete(0, tk.END)
+
+def leer_datos_csv(self):
+    fechas = []
+    pesos = []
+    imc_valores = []
     
+    if not os.path.exist(self.archivo_csv):
+        return fechas, pesos, imc_valores
     
-    
-    
-    
-    
-    
+    with open(self.archivo_csv, 'r', encoding='utf-8') as archivo:
+        lector = csv.DictReader(archivo)
+        
+        for fila in lector:
+            try:
+                fechas.append(fila['Fecha'])
+                pesos.append(float(fila['Peso_kg']))
+                imc_valores.append(float(fila['IMC']))
+            
+            except:
+                continue
+            
+    return fechas, pesos, imc_valores
+        
