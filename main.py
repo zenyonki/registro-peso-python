@@ -52,6 +52,45 @@ def crear_interfaz(self):
     self.entrada_altura = tk.Entry(frame_entrada, width=30)
     self.entrada_altura.grid(row=2, column=1, pady=5)
     
+    #Waistline field
+    tk.Label(frame_entrada, text="Cintura (cm) [Opcional]:").grid(row=3, column=0, sticky="w", pady=5)
+    self.entrada_cintura = tk.Entry(frame_entrada, width=30)
+    self.entrada_cintura.grid(row=3, column=1, pady=5)
+    
+    #Notes field
+    tk.Label(frame_entrada, text="Notas:").grid(row=4, column=0, sticky="w", pady=5)
+    self.entrada_notas = tk.Entry(frame_entrada, width=30)
+    self.entrada_notas.grid(row=4, column=1, pady=5)
+    
+    #Buttons
+    frame_botones = tk.Frame(self.ventana)
+    frame_botones.pack(pady=10)
+    
+    #Save button
+    btn_guardar = tk.Button(
+        frame_bonotes,
+        text="💾 Guardar Registro",
+        command=self.guardar_datos,
+        bg="#4CAF50",
+        fg="white",
+        font=("Arial", 10, "bold"),
+        padx=10,
+        pady=5
+    )
+    btn_guardar.pack(side="left", padx=5)
+    
+    #Graphics button
+    btn_graficas = tk.Button(
+        frame_botones,
+        text="📊 Ver Gráficas",
+            command=self.mostrar_graficas,
+            bg="#2196F3",
+            fg="white",
+            font=("Arial", 10, "bold"),
+            padx=10,
+            pady=5
+    )
+    btn_graficas.pack(side="left", padx=5)
     
     
     
