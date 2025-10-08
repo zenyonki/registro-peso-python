@@ -297,8 +297,8 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 ## 👨‍💻 Autor
 
 **Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Email: tu-email@ejemplo.com
+- GitHub: [@zenyonki](https://github.com/zenyonki)
+- Email: miguelct89@gmail.com
 
 ---
 
@@ -308,14 +308,5 @@ Proyecto desarrollado como parte del aprendizaje de Python, tkinter y visualizac
 
 ---
 
-## 📸 Capturas de Pantalla
-
-### Pantalla Principal
-![Formulario de registro](screenshots/pantalla_principal.png)
-
-### Gráficas de Progreso
-![Gráficas de evolución](screenshots/graficas.png)
-
----
 
 **⭐ Si este proyecto te fue útil para aprender, considera darle una estrella en GitHub!**
