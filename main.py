@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
+#Object, organizes code
 class RegistroPesoApp:
     def __init__(sel, ventana_principal):
     
@@ -20,3 +21,11 @@ class RegistroPesoApp:
         self.inicializar_csv()
     
         self.crear_interfaz()
+
+#Csv initialization
+def inicializar_csv(sel):
+    if not os.pathexist(self.archivo_csv):
+        with open(self.archivo_csv, 'w', newline='', encoding='utf-8')as archivo:
+            escritor = csv.writer(archivo)
+            escritor.writerow(['Fecha', 'Peso_kg', 'Altura_cm', 'Cintura_cm', 'IMC', 'Notas'])
+
