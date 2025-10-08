@@ -29,3 +29,36 @@ def inicializar_csv(sel):
             escritor = csv.writer(archivo)
             escritor.writerow(['Fecha', 'Peso_kg', 'Altura_cm', 'Cintura_cm', 'IMC', 'Notas'])
 
+#Interface
+def crear_interfaz(self):
+    #Data entry frame
+    frame_entrada = tk.LabelFrame(self.ventana, text="Registrar Medición", padx=20, pady=20)
+    frame_entrada.pack(padx=10, pady=10, fill="both", expand=True)
+    
+    #Date field
+    tk.Label(frame_entrada, text="Fecha (YYYY-MM-DD):").grid(row=0, column=0, sticky="w", pady=5)
+    self.entrada_fecha = tk.Entry(frame_entrada, width=30)
+    self.entrada_fecha.grid(row=0, column=1, pady=5)
+    #Today's date
+    self.entrada_fecha.insert(0, datetime.now().strftime("%Y-%m-%d"))
+    
+    #Weight field
+    tk.Label(frame_entrada, text="Peso (kg):").grid(row=1, column=0, sticky="w", pady=5)
+    self.entrada_peso = tk.Entry(frame_entrada, width=30)
+    self.entrada_peso.grid(row=1, column=1, pady=5)
+    
+    #Height field
+    tk.Label(frame_entrada, text="Altura (cm):").grid(row=2, column=0, sticky="w", pady=5)
+    self.entrada_altura = tk.Entry(frame_entrada, width=30)
+    self.entrada_altura.grid(row=2, column=1, pady=5)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
