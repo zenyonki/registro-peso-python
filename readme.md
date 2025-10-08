@@ -1,6 +1,7 @@
 # 📊 Registro de Peso Corporal
 
 Aplicación de escritorio desarrollada en Python con **tkinter** para registrar y visualizar el progreso de peso corporal y métricas de salud.
+Agradezco a https://github.com/codefirstio ya que este proyecto fue inspirado en este: https://github.com/codefirstio/tkinter-data-entry
 
 ## 🎯 Objetivo del Proyecto
 
